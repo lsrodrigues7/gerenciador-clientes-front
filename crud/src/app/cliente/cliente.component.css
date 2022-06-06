@@ -1,0 +1,18 @@
+.botaoCad{
+    color: white;
+    background-color: tomato;
+}
+
+
+.btEditar{
+    color: darkcyan;
+  }
+
+  .btRemover{
+    color: tomato;
+  }
+
+  .botaoPesquisar{
+    color: rgb(255, 255, 255);
+    background-color: darkcyan;
+}

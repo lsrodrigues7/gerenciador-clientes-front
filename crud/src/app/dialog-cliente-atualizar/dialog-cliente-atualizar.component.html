@@ -1,0 +1,62 @@
+<mat-card-header>
+    <mat-card-title >
+      Atualizar Cliente
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+        <mat-form-field  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 input" >
+          <mat-label>Nome:</mat-label>
+          <input matInput placeholder="Ex: Leonardo Rodrigues" [(ngModel)]="model.nomeCliente" autocomplete="off"/>
+        </mat-form-field>
+
+        <mat-form-field  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 input" >
+          <mat-label>CPF/CNPJ:</mat-label>
+          <input matInput placeholder="Ex: 2324538962" maxlength="14" [(ngModel)]="model.cpfCnpjCliente" autocomplete="off"/>
+        </mat-form-field>
+
+        <mat-form-field  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 input" >
+          <mat-label>Telefone:</mat-label>
+          <input matInput placeholder="Ex: 96 997895263" mask="(00) 00000-0000" [(ngModel)]="model.telefoneCliente" autocomplete="off"/>
+        </mat-form-field>
+
+        <mat-form-field  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 input" >
+          <mat-label>Email:</mat-label>
+          <input matInput placeholder="Ex: outlook@gmail.com" [(ngModel)]="model.emailCliente" autocomplete="off"/>
+        </mat-form-field>
+     
+        <mat-form-field  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 input" >
+          <mat-label>Endereço:</mat-label>
+          <input matInput placeholder="Ex: Rua Palestra" [(ngModel)]="model.enderecoCliente" autocomplete="off"/>
+        </mat-form-field>
+
+        <mat-form-field  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 input">
+          <mat-label>Bairro:</mat-label>
+          <input matInput placeholder="Ex: Centro" [(ngModel)]="model.bairroCliente" autocomplete="off"/>
+        </mat-form-field>
+
+        <mat-form-field  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 input" >
+          <mat-label>Número da casa:</mat-label>
+          <input matInput placeholder="Ex: 589" [(ngModel)]="model.numeroCliente" autocomplete="off"/>
+        </mat-form-field>
+
+
+        <mat-form-field class="col-12 col-sm-8 col-md-8 col-lg-12 col-xl-12 input">
+          <mat-label>Cidade</mat-label>
+          <mat-select [(ngModel)]="cidade" panelClass="example-long-panel" (selectionChange)="setCidade($event)">
+            <mat-option *ngFor="let cid of cidades" [value]=cid>
+              {{ cid.descricaoCidade  }} - {{ cid.ufCidade }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field  class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 input" >
+          <mat-label>Cep:</mat-label>
+          <input matInput placeholder="Ex: 19700000"  mask="00000-000" [(ngModel)]="model.cepCliente" autocomplete="off"/>
+        </mat-form-field>
+
+      <mat-dialog-actions>
+        <button class="mat-raised-button atualizar" (click)="validaAtualizar()">Atualizar</button>
+        <button class="mat-raised-button voltar" (click)="voltar()">Voltar</button>
+    </mat-dialog-actions>
+  </mat-card-content>
+

@@ -1,0 +1,148 @@
+<mat-card class="example-card" style="margin-top: 30px">
+    <mat-card-header>
+      <mat-card-title>Consulta de Clientes</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div style="margin-top: 10px">
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2 col-xl-2">
+          <mat-form-field class="example-full-width">
+            <mat-label>Nome:</mat-label>
+            <input matInput [(ngModel)]="inputNomeCliente" placeholder="Ex: Leonardo" autocomplete="off" />
+          </mat-form-field>
+        </div>
+
+        
+
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" align="right">
+            <button class="botaoPesquisar" mat-raised-button (click)="pesquisar()">Pesquisar</button>
+        </div>
+        <br>
+      </div>
+
+      <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" align="right">
+        <button class="botaoCad" mat-raised-button (click)="cadastrarCliente()">Cadastrar Cliente</button>
+      </div>
+
+          <mat-card class="body" style="margin-top: 15px;">       
+          <div class="example-container mat-elevation-z8" style="margin-top: 30px">
+            
+          <mat-table #table [dataSource]="dataSource"  matSort class = "mat-elevation-z8">
+            <div>
+    
+            <ng-container matColumnDef="codigoCliente">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>
+                Cód. Cliente</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.codigoCliente }}
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="nomeCliente">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>
+               Nome</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.nomeCliente }}
+              </mat-cell>
+            </ng-container>
+
+                
+            <ng-container matColumnDef="cpfCnpjCliente">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>
+               CPF/CNPJ</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.cpfCnpjCliente }}
+              </mat-cell>
+            </ng-container>
+            
+            <ng-container matColumnDef="telefoneCliente">
+              <mat-header-cell *matHeaderCellDef
+               mat-sort-header>
+               Telefone</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.telefoneCliente }}
+              </mat-cell>
+            </ng-container>
+            
+            <ng-container matColumnDef="emailCliente">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>
+               Email</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.emailCliente }}
+              </mat-cell>
+            </ng-container>
+          
+            <ng-container matColumnDef="enderecoCliente">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>
+               Endereço</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.enderecoCliente}}
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="bairroCliente">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>
+               Bairro </mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.bairroCliente }}
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="numeroCliente">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>
+               Nº </mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.numeroCliente }}
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="descricaoCidade">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>
+                Cidade</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.descricaoCidade }}
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="cepCliente">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>
+                Cep</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.cepCliente }}
+              </mat-cell>
+            </ng-container>
+  
+            
+            <ng-container matColumnDef="select">
+              <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
+              <mat-cell
+                *matCellDef="let element"
+                align="right"
+                >
+              <button
+              class="btRemover"
+              mat-icon-button
+              matTooltip="Clique para Remover o Registro"
+              (click)="remover(element)">
+              <mat-icon>delete</mat-icon>
+            </button>
+              <button
+              class="btAtualizar"
+              mat-icon-button
+              matTooltip="Clique para Atualizar o Registro"
+              (click)="atualizar(element)">
+              <mat-icon>edit</mat-icon>
+            </button>
+              </mat-cell>
+            </ng-container>
+    
+            <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+            <mat-row class="clicar" *matRowDef="let row; columns: displayedColumns" ></mat-row>
+          </div>
+          </mat-table>
+
+          </div>
+      </mat-card>      
+      </mat-card-content>
+
+  

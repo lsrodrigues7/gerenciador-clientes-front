@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button>
+      <mat-icon (click)="sidenav.toggle();">menu</mat-icon>
+    </button>
+    <h1>Gerenciador de Clientes</h1>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <mat-nav-list>
+      <a  routerLink="/cliente" mat-list-item>Clientes</a>
+      <a  routerLink="/cidade" mat-list-item>Cidades</a>
+      <a  routerLink="/sobre" mat-list-item>Sobre</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="div-sidenav">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

@@ -1,0 +1,73 @@
+<mat-card class="example-card" style="margin-top: 30px">
+    <mat-card-header>
+      <mat-card-title>Consulta de Cidades</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12" align="right">
+            <button class="botaoCad" mat-raised-button (click)="cadastrar()">Cadastrar Cidade</button>
+        </div>
+
+      
+          <mat-card class="body" style="margin-top: 15px;">       
+          <div class="example-container mat-elevation-z8" style="margin-top: 30px">
+            
+          <mat-table #table [dataSource]="dataSource"  matSort class = "mat-elevation-z8">
+            <div>
+    
+            <ng-container matColumnDef="codigoCidade">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>
+                Cód. Cidade</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.codigoCidade }}
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="descricaoCidade">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>
+               Descrição</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.descricaoCidade }}
+              </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="ufCidade">
+              <mat-header-cell *matHeaderCellDef mat-sort-header>
+               UF</mat-header-cell>
+              <mat-cell *matCellDef="let element">
+                {{ element.ufCidade}}
+              </mat-cell>
+            </ng-container>
+            
+            <ng-container matColumnDef="select">
+              <mat-header-cell *matHeaderCellDef>Ações</mat-header-cell>
+              <mat-cell
+                *matCellDef="let element"
+                align="right"
+                >
+                <button
+                class="btRemover"
+                mat-icon-button
+                matTooltip="Clique para Remover o Registro"
+                (click)="remover(element)">
+                <mat-icon>delete</mat-icon>
+              </button>
+              <button
+                class="btAtualizar"
+                mat-icon-button
+                matTooltip="Clique para Atualizar o Registro"
+                (click)="atualizar(element)">
+                <mat-icon>mode_edit</mat-icon>
+              </button>
+              </mat-cell>
+            </ng-container>
+    
+            <mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></mat-header-row>
+            <mat-row class="clicar" *matRowDef="let row; columns: displayedColumns" ></mat-row>
+          </div>
+          </mat-table>
+
+          </div>
+      </mat-card>      
+      </mat-card-content>
+
+  

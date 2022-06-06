@@ -1,0 +1,67 @@
+:host {
+    display: block;
+}
+
+mat-dialog-content {
+    margin-bottom: 50px;
+}
+
+mat-form-field {
+    margin-top: 10px;
+}
+
+mat-dialog-actions {
+    padding: 15px;
+}
+
+mat-dialog-actions button {
+    margin-left: 10px;
+    flex: auto;
+}
+
+.container {
+    max-width: 820px;
+    margin: 0px auto;
+    margin-top: 10px;
+}
+
+.observacao {
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+.commenter {
+    float: left;
+}
+
+.commenter img {
+    width: 35px;
+    height: 35px;
+}
+
+.observacao-text-area {
+    float: left;
+    width: 100%;
+    height: auto;
+}
+
+.textinput {
+    float: left;
+    width: 100%;
+    min-height: 75px;
+    outline: none;
+    resize: none;
+    border: 1px solid grey;
+}
+
+
+.cadastrar{
+    background-color: darkcyan;
+    color:white;
+}
+
+.voltar{
+    background-color: tomato;
+    color:white;
+}
